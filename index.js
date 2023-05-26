@@ -1,10 +1,15 @@
-// import photoloader from "./lib/photoloader.js";
-import loadPicture from "./photoloader.js"; './photoloader.js';
+import { loadPicture } from './photoloader.js';
 
-loadPicture(7)
+function getPicture(id) {
+    loadPicture(id)
+        .then(photoData => {
+            console.log('Id :', photoData.photo.id);
+            console.log('Titre :', photoData.photo.titre);
+            console.log('URL :', photoData.photo.file);
+        })
+        .catch(error => {
+            console.error('Erreur :', error.message);
+        });
+}
 
-
-// const getPicture =
-//
-// getPicture(105);
-
+getPicture(7);
