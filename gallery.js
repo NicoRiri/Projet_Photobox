@@ -1,8 +1,8 @@
-import {loadResource} from './photoloader.js';
+import {loadRessource} from './photoloader.js';
 import {apiEntree} from "./config.js";
 
 function load() {
-    fetch(loadResource({apiEntree}))
+    fetch(loadRessource({apiEntree}))
         .then(response => {
             if (response.ok) {
                 return response.json();

@@ -36,4 +36,4 @@ function getComment(info){
 }
 
 
-getPicture(7)
+getPicture(8)
