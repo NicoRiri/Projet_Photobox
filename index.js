@@ -1,14 +1,12 @@
 import { loadPicture, loadRessource } from './photoloader.js';
-import {displayPicture} from "./ui.js";
+import * as ui from "./ui.js";
 
 function getPicture(id) {
     loadPicture(id)
         .then(photoData => {
-            console.log('Id :', photoData.photo.id);
-            console.log('Titre :', photoData.photo.titre);
-            console.log('URL :', photoData.photo.file);
-            displayPicture(photoData.photo.file);
+            ui.displayPicture(photoData.photo.file);
             getCategorie(photoData)
+            getComment(photoData)
         })
         .catch(error => {
             console.error('Erreur :', error.message);
@@ -17,7 +15,17 @@ function getPicture(id) {
 
 function getCategorie(info){
     loadRessource(`photos/${info.photo.id}/categorie/`)
-        .then(function(data) {})
-
+        .then(res =>{
+            console.log(res)
+        })
 }
+
+function getComment(info){
+    loadRessource(`photos/${info.photo.id}/comments/`)
+        .then(res =>{
+            console.log(res)
+        })
+}
+
+
 getPicture(7)
