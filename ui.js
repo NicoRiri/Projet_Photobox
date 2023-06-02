@@ -1,4 +1,6 @@
 import {imgSortie} from "./config.js";
+import {display_gallerie} from "./gallery_ui.js";
+import {load} from "./gallery.js";
 
 export function displayPicture(img){
     let photo =  document.createElement('main');
@@ -6,11 +8,13 @@ export function displayPicture(img){
     photo.innerHTML = `
     <h1>Photo : ${img.photo.id}</h1>
     <button id="remove_picture">supprimer</button>
+    <button id="gallerie">gallerie</button>
     <section id="la_photo">
         <img src="${imgSortie}/small/${img.photo.file}">
         <h4>${img.photo.titre}</h4>
         <p>${img.photo.descr}</p>
         <p>${img.photo.type}, ${img.photo.width}x${img.photo.height}</p>
+        <h4 id="la_categorie"></h4>
         <h4>commentaires : </h4>
         <ul id = "les_commentaires">
          <li>pseudo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, vitae.</li>
@@ -21,8 +25,15 @@ export function displayPicture(img){
 </main>
     `;
       document.body.innerHTML = photo.innerHTML;
+        document.getElementById('gallerie').addEventListener('click', function(){
+            load()
+                .then(res =>{
+                    display_gallerie(res)
+                })
+        });
 
 }
+
 
 
 export const insertCategorie = categorieData => {
