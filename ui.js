@@ -8,7 +8,7 @@ export function displayPicture(img){
     photo.innerHTML = `
     <h1>Photo : ${img.photo.id}</h1>
     <button id="remove_picture">supprimer</button>
-    <button id="gallerie">gallerie</button>
+    <button id="gallerie" onclick="window.location.href = 'index2.html';">gallerie</button>
     <section id="la_photo">
         <img src="${imgSortie}/small/${img.photo.file}">
         <h4>${img.photo.titre}</h4>
@@ -25,10 +25,4 @@ export function displayPicture(img){
 </main>
     `;
       document.body.innerHTML = photo.innerHTML;
-        document.getElementById('gallerie').addEventListener('click', function(){
-            load()
-                .then(res =>{
-                    display_gallerie(res)
-                })
-        });
 }
