@@ -20,11 +20,10 @@ export function loadPicture(idPicture) {
 }
 
 export function loadRessource(uri){
-    fetch(`${apiEntree}/${uri}`, { credentials: 'include' })
-        .then(value => (res) => {
-            res.json()
-                .then(jsres => {
-                    return jsres
-                })
+    let p = fetch(`${apiEntree}/${uri}`, { credentials: 'include' })
+        .then(function(res)  {
+            if (res.ok) return res.json()
+            else return Promise.reject( new Error('Erreur lors de la récupération des données de la photo.'));
         })
+    return p.catch;
 }
