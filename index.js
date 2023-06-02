@@ -5,7 +5,7 @@ import {insertComment} from "./ui.js";
 function getPicture(id) {
     loadPicture(id)
         .then(photoData => {
-            ui.displayPicture(photoData.photo.file);
+            ui.displayPicture(photoData);
             getCategorie(photoData)
                 .then(res =>{
                     ui.insertCategorie(res)
