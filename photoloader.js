@@ -18,3 +18,13 @@ export function loadPicture(idPicture) {
             });
     });
 }
+
+export function loadRessource(uri){
+    fetch(`${apiEntree}/${uri}`, { credentials: 'include' })
+        .then(value => (res) => {
+            res.json()
+                .then(jsres => {
+                    return jsres
+                })
+        })
+}
