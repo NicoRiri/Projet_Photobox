@@ -5,7 +5,6 @@ export function displayPicture(img) {
     photo.id = 'photo' + img.photo.id;
     photo.innerHTML = `
     <h1>Photo : ${img.photo.id}</h1>
-    <button id="remove_picture">supprimer</button>
     <button id="gallerie" onclick="window.location.href = 'index2.html';">gallerie</button>
     <section id="la_photo">
         <img src="${imgSortie}/small/${img.photo.file}">
