@@ -1,0 +1,16 @@
+{
+  "name": "projet_photobox",
+  "version": "1.0.0",
+  "description": "- Oudin Clément S4ADWM2\r - Bernardet Nicolas S4ADWM",
+  "main": "index2.js",
+  "scripts": {
+    "build": "esbuild index2.js --bundle --outfile=dist/app.bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "^0.18.1"
+  }
+
+}
