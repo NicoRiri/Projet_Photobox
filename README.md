@@ -7,6 +7,7 @@
 ## Comment ça marche
 
 Executez la commande à la racine du projet pour compiler le JS grâce à ESBuild
+
 ``npm run build``
 
 Ensuite executez à l'aide d'un serveur web le fichier index2.html.
