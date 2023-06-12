@@ -4,5 +4,5 @@
 - Oudin Clément S4ADWM2
 - Bernardet Nicolas S4ADWM
 
-## Fonctionnalité
-pas encore
+## Comment ça marche
+Executez à l'aide d'un serveur web le fichier index2.html
