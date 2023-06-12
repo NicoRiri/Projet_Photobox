@@ -1,5 +1,4 @@
 import {imgSortie} from "./config.js";
-import {display_gallerie} from "./gallery_ui.js";
 
 export function displayPicture(img) {
     let photo = document.createElement('main');
@@ -28,13 +27,11 @@ export function displayPicture(img) {
 
 
 export const insertCategorie = categorieData => {
-    console.log(categorieData)
     document.querySelector("#la_categorie")
         .innerText = "categorie:"+categorieData.categorie.nom
 }
 
 export const insertComment = CommentData => {
-    console.log(CommentData)
     CommentData.comments.forEach(com => {
         let li = document.createElement("li")
         li.innerText = com.pseudo+": "+com.content;

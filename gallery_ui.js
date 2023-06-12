@@ -1,6 +1,6 @@
-import { imgSortie } from "./config.js";
-import {loadPicture} from "./photoloader.js";
-import * as ui from "./ui.js";
+import {imgSortie} from "./config.js";
+import {getPicture} from "./index.js";
+
 
 export function display_gallerie(gallerie) {
     const galleryContainer = document.querySelector('#gallery');
@@ -12,6 +12,11 @@ export function display_gallerie(gallerie) {
             gall.src = `${imgSortie}/small/${element.photo.file}`;
             gall.setAttribute('data-photoId', element.photo.id);
             galleryContainer.appendChild(gall);
+            gall.addEventListener('click', () => {
+                const photoId = element.photo.id;
+
+                getPicture(photoId);
+            });
         });
-    });
-}
+    })
+    }

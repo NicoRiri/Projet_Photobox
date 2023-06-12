@@ -1,8 +1,7 @@
 import { loadPicture, loadRessource } from './photoloader.js';
 import * as ui from "./ui.js";
-import {insertComment} from "./ui.js";
 
-function getPicture(id) {
+export function getPicture(id) {
     loadPicture(id)
         .then(photoData => {
             ui.displayPicture(photoData);
@@ -34,6 +33,3 @@ function getComment(info){
             return res;
         })
 }
-
-
-getPicture(8)
